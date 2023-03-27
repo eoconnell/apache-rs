@@ -24,13 +24,13 @@ use std::os::raw::c_void;
 #[no_mangle]
 pub static mut example_module: module =
     module {
-        version: MODULE_MAGIC_NUMBER_MAJOR as i32,
-        minor_version: MODULE_MAGIC_NUMBER_MINOR as i32,
+        version: MODULE_MAGIC_NUMBER_MAJOR,
+        minor_version: MODULE_MAGIC_NUMBER_MINOR,
         module_index: -1,
         name: b"mod_example\x00" as *const u8 as *const c_char,
         dynamic_load_handle: 0 as *mut c_void,
         next: 0 as *mut module,
-        magic: MODULE_MAGIC_COOKIE as u64,
+        magic: MODULE_MAGIC_COOKIE,
         rewrite_args: None,
         create_dir_config: None,
         merge_dir_config: None,

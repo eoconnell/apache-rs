@@ -1,13 +1,11 @@
 [package]
-
 name = "mod_example"
 version = "0.0.2"
+edition = "2021"
 
 [lib]
 name = "mod_example"
-crate-type = ["dylib"]
+crate-type = ["cdylib"]
 
 [dependencies]
-
-[dependencies.apache-rs]
-path = "../.."
+apache-rs = { path = "../.." }

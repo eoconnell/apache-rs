@@ -14,7 +14,7 @@ sudo apt install apache2-dev libapr1-dev
 * Build project
 ```bash
 cargo build
-cargo test --lib
+cargo test
 ```
 * Build Apache httpd module `mod_example`
 ```bash

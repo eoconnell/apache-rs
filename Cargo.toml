@@ -3,7 +3,7 @@ name = "apache-rs"
 description = "Rust FFI for creating Apache httpd modules."
 version = "0.0.2"
 authors = ["studersi <rust@studer.si>"]
-edition = "2018"
+edition = "2021"
 license-file = "LICENSE"
 readme = "README.md"
 documentation = "https://docs.rs/apache-rs"
@@ -12,6 +12,7 @@ repository = "https://github.com/studersi/apache-rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-bindgen = "0.59.2"
+bindgen = "0.64.0"
+regex = "1.7.3"
 
 [dependencies]
