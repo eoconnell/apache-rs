@@ -28,11 +28,15 @@ impl Pool {
         unsafe { apr_pool_userdata_setn(data as *const c_void, c_key, None, &mut self.0) };
     }
 
-    pub fn get_userdata<T>(&mut self, key: &str) -> *mut T {
+    pub fn get_userdata<T>(&mut self, key: &str) -> Option<*mut T> {
         let mut data: *mut T = std::ptr::null_mut();
         let c_data = &mut data as *mut *mut _ as *mut *mut c_void;
         let c_key = CString::new(key).unwrap().into_raw();
         unsafe { apr_pool_userdata_get(c_data, c_key, &mut self.0) };
-        data
+        if data.is_null() {
+            None
+        } else {
+            Some(data)
+        }
     }
 }
